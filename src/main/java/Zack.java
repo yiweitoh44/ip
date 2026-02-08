@@ -19,10 +19,7 @@ public class Zack {
             } else if (input.equals("list")) {
                 System.out.println("Here are the tasks in your list:");
                 for (int i = 0; i < taskCount; i++) {
-                    System.out.println(
-                            (i + 1) + "." +
-                                    tasks[i]
-                    );
+                    System.out.println((i + 1) + "." + tasks[i]);
                 }
             } else if (input.startsWith("mark")) {
                 int index = Integer.parseInt(input.split(" ")[1]) - 1;
