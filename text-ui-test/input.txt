@@ -1,9 +1,12 @@
-todo buy flower
-list
-deadline banana /by 5pm
-event hulala /from sat 5pm /to 8pm
+todo Buy groceries
+todo
+deadline Submit homework /by 5pm
+deadline /by 6pm
+event Party /from Sat 5pm /to Sat 10pm
+event Meeting /from /to 3pm
 list
 mark 1
-mark 3
+mark 5
 unmark 1
+blah
 bye
