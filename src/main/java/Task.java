@@ -15,12 +15,20 @@ public class Task {
         isDone = false;
     }
 
+    public boolean isDone() {
+        return isDone;
+    }
+
     public String getStatusIcon() {
         return isDone ? "X" : " ";
     }
 
     public String getTypeIcon() {
         return " ";
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     @Override
