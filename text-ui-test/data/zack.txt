@@ -1,0 +1,3 @@
+T | 0 | Buy groceries
+D | 0 | Submit homework | 5pm
+E | 0 | Party | Sat 5pm | Sat 10pm

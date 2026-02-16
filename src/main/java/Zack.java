@@ -3,12 +3,14 @@ import java.util.ArrayList;
 
 public class Zack {
     public static void main(String[] args) {
+
+        Storage storage = new Storage("./data/zack.txt");
+        ArrayList<Task> tasks = storage.load();
+
         Scanner in = new Scanner(System.in);
 
         System.out.println("Howdy! I'm Zack");
         System.out.println("What can I do for you?");
-
-        ArrayList<Task> tasks = new ArrayList<>();
 
         while (true) {
             String input = in.nextLine();
@@ -55,6 +57,7 @@ public class Zack {
                             throw new ZackException("The description of a todo cannot be empty!");
                         }
                         tasks.add(new Todo(desc));
+                        storage.save(tasks);
                     } else if (input.startsWith("deadline")) {
                         String rest = input.length() > 8 ? input.substring(8).trim() : "";
                         String[] parts = rest.split("/by", 2);
@@ -62,6 +65,7 @@ public class Zack {
                             throw new ZackException("Deadline format: deadline DESCRIPTION /by TIME");
                         }
                         tasks.add(new Deadline(parts[0].trim(), parts[1].trim()));
+                        storage.save(tasks);
                     } else if (input.startsWith("event")) {
                         String rest = input.length() > 5 ? input.substring(5).trim() : "";
                         String[] parts = rest.split("/from|/to");
@@ -69,10 +73,12 @@ public class Zack {
                             throw new ZackException("Event format: event DESCRIPTION /from START /to END");
                         }
                         tasks.add(new Event(parts[0].trim(), parts[1].trim(), parts[2].trim()));
+                        storage.save(tasks);
                     } else {
                         throw new ZackException("I don't know what that means: " + input);
                     }
 
+                    storage.save(tasks);
                     System.out.println("Got it. I've added this task:");
                     System.out.println("  " + tasks.get(tasks.size() - 1)); // will call toString()
                     System.out.println("Now you have " + tasks.size() + " tasks in the list.");
