@@ -32,6 +32,7 @@ public class Zack {
                     tasks.get(index).markAsDone();
                     System.out.println("Nice! I've marked this task as done:");
                     System.out.println("  " + tasks.get(index));
+                    storage.save(tasks);
                 } else if (input.startsWith("unmark")) {
                     int index = Integer.parseInt(input.split(" ")[1]) - 1;
                     if (index < 0 || index >= tasks.size()) {
@@ -40,6 +41,7 @@ public class Zack {
                     tasks.get(index).unmark();
                     System.out.println("OK, I've marked this task as not done yet:");
                     System.out.println("  " + tasks.get(index));
+                    storage.save(tasks);
                 } else if (input.startsWith("delete")) {
                     int index = Integer.parseInt(input.split(" ")[1]) - 1;
                     if (index < 0 || index >= tasks.size()) {
@@ -49,7 +51,7 @@ public class Zack {
                     System.out.println("Noted. I've removed this task:");
                     System.out.println("  " + removed);
                     System.out.println("Now you have " + tasks.size() + " tasks in the list.");
-
+                    storage.save(tasks);
                 } else {
                     if (input.startsWith("todo")) {
                         String desc = input.length() > 4 ? input.substring(4).trim() : ""; // get everything after "todo"
