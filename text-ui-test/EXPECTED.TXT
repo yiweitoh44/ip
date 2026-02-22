@@ -1,35 +1,45 @@
 Howdy! I'm Zack
 What can I do for you?
+Here are the tasks in your list:
 Got it. I've added this task:
-  [T][ ] Buy groceries
+  [T][ ] Buy milk
 Now you have 1 tasks in the list.
 ____________________________________________________________
  OOPS!!! The description of a todo cannot be empty!
 ____________________________________________________________
 Got it. I've added this task:
-  [D][ ] Submit homework (by: 5pm)
+  [D][ ] Submit report (by: 2026-02-25)
 Now you have 2 tasks in the list.
 ____________________________________________________________
  OOPS!!! Deadline format: deadline DESCRIPTION /by TIME
 ____________________________________________________________
 Got it. I've added this task:
-  [E][ ] Party (from: Sat 5pm to: Sat 10pm)
+  [E][ ] Team meeting (from: 2026-02-22 10:00 to: 2026-02-22 12:00)
 Now you have 3 tasks in the list.
 ____________________________________________________________
  OOPS!!! Event format: event DESCRIPTION /from START /to END
 ____________________________________________________________
 Here are the tasks in your list:
-1.[T][ ] Buy groceries
-2.[D][ ] Submit homework (by: 5pm)
-3.[E][ ] Party (from: Sat 5pm to: Sat 10pm)
+1.[T][ ] Buy milk
+2.[D][ ] Submit report (by: 2026-02-25)
+3.[E][ ] Team meeting (from: 2026-02-22 10:00 to: 2026-02-22 12:00)
 Nice! I've marked this task as done:
-  [T][X] Buy groceries
+  [D][X] Submit report (by: 2026-02-25)
 ____________________________________________________________
  OOPS!!! Invalid task number for mark!
 ____________________________________________________________
 OK, I've marked this task as not done yet:
-  [T][ ] Buy groceries
+  [D][ ] Submit report (by: 2026-02-25)
 ____________________________________________________________
- OOPS!!! I don't know what that means: blah
+ OOPS!!! Invalid task number for unmark!
+____________________________________________________________
+Noted. I've removed this task:
+  [T][ ] Buy milk
+Now you have 2 tasks in the list.
+____________________________________________________________
+ OOPS!!! Invalid task number for delete!
+____________________________________________________________
+____________________________________________________________
+ OOPS!!! I don't know what that means: foobar
 ____________________________________________________________
 Aite ciao!

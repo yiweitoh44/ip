@@ -1,12 +1,16 @@
-todo Buy groceries
-todo
-deadline Submit homework /by 5pm
-deadline /by 6pm
-event Party /from Sat 5pm /to Sat 10pm
-event Meeting /from /to 3pm
 list
-mark 1
-mark 5
-unmark 1
-blah
+todo Buy milk
+todo
+deadline Submit report /by 2026-02-25
+deadline /by 5pm
+event Team meeting /from 2026-02-22 10:00 /to 2026-02-22 12:00
+event Party /from Sat 5pm
+list
+mark 2
+mark 10
+unmark 2
+unmark 10
+delete 1
+delete 10
+foobar
 bye
