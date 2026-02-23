@@ -1,17 +1,33 @@
+import java.util.ArrayList;
+
+/**
+ * Main class of the Zack task manager application.
+ * Handles user input, command execution, and interaction with UI and storage.
+ */
 public class Zack {
 
     private Storage storage;
     private TaskList tasks;
     private Ui ui;
 
+    /**
+     * Initializes Zack with a specified file path for storage.
+     * Sets up the UI and loads existing tasks if available.
+     *
+     * @param filePath Path to the storage file.
+     */
     public Zack(String filePath) {
         ui = new Ui();
         storage = new Storage(filePath);
 
-        tasks = new TaskList(storage.load());
-        //tasks = new TaskList(); // start empty for testing
+        //tasks = new TaskList(storage.load());
+        tasks = new TaskList(); // start empty for testing
     }
 
+    /**
+     * Runs the main program loop.
+     * Reads user input, parses commands, executes them, and updates storage.
+     */
     public void run() {
         ui.showWelcome();
         boolean isExit = false;
@@ -73,14 +89,23 @@ public class Zack {
                     ui.showAddedTask(tasks.getTasks().get(tasks.size() - 1), tasks.size());
                     storage.save(tasks.getTasks());
                     break;
+                case "find":
+                    ArrayList<Task> foundTasks = tasks.find(pi.argument);
+                    ui.showFoundTasks(foundTasks);
+                    break;
                 }
-
             } catch (ZackException | NumberFormatException e) {
                 ui.showError(e.getMessage());
             }
         }
     }
 
+    /**
+     * Program entry point.
+     * Creates a Zack instance and starts the application.
+     *
+     * @param args Command-line arguments (not used).
+     */
     public static void main(String[] args) {
         new Zack("./data/zack.txt").run();
     }
