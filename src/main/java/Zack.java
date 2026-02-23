@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Zack {
 
     private Storage storage;
@@ -8,8 +10,8 @@ public class Zack {
         ui = new Ui();
         storage = new Storage(filePath);
 
-        tasks = new TaskList(storage.load());
-        //tasks = new TaskList(); // start empty for testing
+        //tasks = new TaskList(storage.load());
+        tasks = new TaskList(); // start empty for testing
     }
 
     public void run() {
@@ -73,8 +75,11 @@ public class Zack {
                     ui.showAddedTask(tasks.getTasks().get(tasks.size() - 1), tasks.size());
                     storage.save(tasks.getTasks());
                     break;
+                case "find":
+                    ArrayList<Task> foundTasks = tasks.find(pi.argument);
+                    ui.showFoundTasks(foundTasks);
+                    break;
                 }
-
             } catch (ZackException | NumberFormatException e) {
                 ui.showError(e.getMessage());
             }

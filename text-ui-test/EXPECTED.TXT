@@ -42,4 +42,14 @@ ____________________________________________________________
 ____________________________________________________________
  OOPS!!! I don't know what that means: foobar
 ____________________________________________________________
+Got it. I've added this task:
+  [T][ ] Do new report
+Now you have 3 tasks in the list.
+Here are the matching tasks in your list:
+1.[D][ ] Submit report (by: 2026-02-25)
+2.[T][ ] Do new report
+____________________________________________________________
+ OOPS!!! The search keyword cannot be empty!
+____________________________________________________________
+  No matching tasks found.
 Aite ciao!

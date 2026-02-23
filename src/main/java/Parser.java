@@ -14,6 +14,7 @@ public class Parser {
         case "todo":
         case "deadline":
         case "event":
+        case "find":
             return new ParsedInput(command, argument);
         default:
             throw new ZackException("I don't know what that means: " + input);

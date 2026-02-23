@@ -58,4 +58,15 @@ public class Ui {
         System.out.println("OK, I've marked this task as not done yet:");
         System.out.println("  " + task);
     }
+
+    public void showFoundTasks(java.util.ArrayList<Task> tasks) {
+        if (tasks.isEmpty()) {
+            System.out.println("  No matching tasks found.");
+            return;
+        }
+        System.out.println("Here are the matching tasks in your list:");
+        for (int i = 0; i < tasks.size(); i++) {
+            System.out.println((i + 1) + "." + tasks.get(i));
+        }
+    }
 }

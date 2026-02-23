@@ -43,4 +43,18 @@ public class TaskList {
     public int size() {
         return tasks.size();
     }
+
+    public ArrayList<Task> find(String keyword) throws ZackException {
+        String trimmed = keyword.trim();
+        if (trimmed.isEmpty()) {
+            throw new ZackException("The search keyword cannot be empty!");
+        }
+        ArrayList<Task> matches = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.toString().contains(trimmed)) {
+                matches.add(task);
+            }
+        }
+        return matches;
+    }
 }

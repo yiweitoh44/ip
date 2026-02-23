@@ -13,4 +13,8 @@ unmark 10
 delete 1
 delete 10
 foobar
+todo Do new report
+find report
+find
+find banana
 bye
