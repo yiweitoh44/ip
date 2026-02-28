@@ -1,4 +1,9 @@
-import java.io.*;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Storage {
@@ -78,12 +83,11 @@ public class Storage {
     private String taskToString(Task task) {
         if (task instanceof Todo) {
             return "T | " + (task.isDone() ? "1" : "0") + " | " + task.getDescription();
-        } else if (task instanceof Deadline) {
-            Deadline d = (Deadline) task;
+        } else if (task instanceof Deadline d) {
             return "D | " + (d.isDone() ? "1" : "0") + " | " + d.getDescription() + " | " + d.getBy();
-        } else if (task instanceof Event) {
-            Event e = (Event) task;
-            return "E | " + (e.isDone() ? "1" : "0") + " | " + e.getDescription() + " | " + e.getFrom() + " | " + e.getTo();
+        } else if (task instanceof Event e) {
+            return "E | " + (e.isDone() ? "1" : "0") + " | " + e.getDescription() + " | "
+                    + e.getFrom() + " | " + e.getTo();
         }
         return "";
     }

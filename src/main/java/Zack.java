@@ -20,8 +20,7 @@ public class Zack {
         ui = new Ui();
         storage = new Storage(filePath);
 
-        //tasks = new TaskList(storage.load());
-        tasks = new TaskList(); // start empty for testing
+        tasks = new TaskList(storage.load());
     }
 
     /**
